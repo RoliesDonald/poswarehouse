@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
 
 // Account Route
 Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+Route::get('/employee/logout', [AdminController::class, 'destroy'])->name('employee.logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
@@ -43,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(EmployeeController::class)->group(function () {
         Route::get('/all/employee', 'AllEmployee')->name('all.employee');
         Route::get('/add/employee', 'AddEmployee')->name('add.employee');
+        Route::post('/employee/profile/store', 'EmployeeStore')->name('profile.employee');
     });
 });
 

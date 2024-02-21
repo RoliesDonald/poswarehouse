@@ -12,14 +12,26 @@
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}" />
 
     <!-- third party css -->
-    <link href="{{ asset('backend/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css') }}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{ asset('backend/assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') }}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{ asset('backend/assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css') }}"
-        rel="stylesheet" type="text/css" />
+    <link href="{{
+                asset(
+                    'backend/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css'
+                )
+            }}" rel="stylesheet" type="text/css" />
+    <link href="{{
+                asset(
+                    'backend/assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css'
+                )
+            }}" rel="stylesheet" type="text/css" />
+    <link href="{{
+                asset(
+                    'backend/assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css'
+                )
+            }}" rel="stylesheet" type="text/css" />
+    <link href="{{
+                asset(
+                    'backend/assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css'
+                )
+            }}" rel="stylesheet" type="text/css" />
     <!-- third party css end -->
 
     <!-- Plugins css -->
@@ -31,6 +43,15 @@
                     'backend/assets/libs/selectize/css/selectize.bootstrap3.css'
                 )
             }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/mohithg-switchery/switchery.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('backend/assets/libs/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/selectize/css/selectize.bootstrap3.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css') }}"
+        rel="stylesheet" type="text/css" />
+
 
     <!-- Bootstrap css -->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -43,8 +64,6 @@
     <!-- Toastr CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet" type="text/css" />
 </head>
-
-
 
 <!-- body start -->
 
@@ -455,6 +474,15 @@
     <!-- Vendor js -->
     <script src="{{ asset('backend/assets/js/vendor.min.js') }}"></script>
 
+    <script src="{{ asset('backend/assets/libs/selectize/js/standalone/selectize.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/mohithg-switchery/switchery.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/multiselect/js/jquery.multi-select.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/jquery-mockjax/jquery.mockjax.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/devbridge-autocomplete/jquery.autocomplete.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
+
     <!-- Plugins js-->
     <script src="{{
                 asset('backend/assets/libs/flatpickr/flatpickr.min.js')
@@ -495,52 +523,107 @@
             }}"></script>
 
     <!-- third party js -->
-    <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/datatables.net-select/js/dataTables.select.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/pdfmake/build/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/pdfmake/build/vfs_fonts.js') }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net/js/jquery.dataTables.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-buttons/js/buttons.html5.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-buttons/js/buttons.flash.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-buttons/js/buttons.print.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/datatables.net-select/js/dataTables.select.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset('backend/assets/libs/select2/js/select2.min.js')
+            }}"></script>
+    <script src="{{
+                asset('backend/assets/libs/pdfmake/build/pdfmake.min.js')
+            }}"></script>
+    <script src="{{
+                asset('backend/assets/libs/pdfmake/build/vfs_fonts.js')
+            }}"></script>
     <!-- third party js ends -->
 
     <!-- Datatables init -->
-    <script src="{{ asset('backend/assets/js/pages/datatables.init.js') }}"></script>
+    <script src="{{
+                asset('backend/assets/js/pages/datatables.init.js')
+            }}"></script>
+
+    <!-- Init js-->
+    <script src="{{ asset('backend/assets/js/pages/form-advanced.init.js') }}"></script>
 
     <!-- Toastr js-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
         @if(Session::has('message'))
-            toastr.options = {
-                "progressBar" : true,
-                "closeButton" : true,
-            }
-            var type = "{{ Session::get('alert-type','info') }}"
-            switch(type){
-               case 'info':
-               toastr.info(" {{ Session::get('message') }} ");
-               break;
+                toastr.options = {
+                    "progressBar" : true,
+                    "closeButton" : true,
+                }
+                var type = "{{ Session::get('alert-type','info') }}"
+                switch(type){
+                   case 'info':
+                   toastr.info(" {{ Session::get('message') }} ");
+                   break;
 
-               case 'success':
-               toastr.success(" {{ Session::get('message') }} ",'OK Success!',{timeOut:2000});
-               break;
+                   case 'success':
+                   toastr.success(" {{ Session::get('message') }} ",'OK Success!',{timeOut:2000});
+                   break;
 
-               case 'warning':
-               toastr.warning(" {{ Session::get('message') }} ");
-               break;
+                   case 'warning':
+                   toastr.warning(" {{ Session::get('message') }} ");
+                   break;
 
-               case 'error':
-               toastr.error(" {{ Session::get('message') }} ");
-               break;
-            }
-            @endif
+                   case 'error':
+                   toastr.error(" {{ Session::get('message') }} ");
+                   break;
+                }
+                @endif
     </script>
 
     <!-- App js-->
