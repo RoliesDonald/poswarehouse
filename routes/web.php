@@ -44,7 +44,8 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(EmployeeController::class)->group(function () {
         Route::get('/all/employee', 'AllEmployee')->name('all.employee');
         Route::get('/add/employee', 'AddEmployee')->name('add.employee');
-        Route::post('/employee/profile/store', 'EmployeeStore')->name('profile.employee');
+        Route::post('/employee/profile/store', 'StoreEmployee')->name('employee.store');
+        Route::get('/edit/employee/{id}', 'EditEmployee')->name('edit.employee');
     });
 });
 
