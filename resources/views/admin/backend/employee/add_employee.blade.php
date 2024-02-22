@@ -13,11 +13,11 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Add Employee</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">New Employee</a></li>
 
                         </ol>
                     </div>
-                    <h4 class="page-title">New Employee Form Registration</h4>
+                    <h4 class="page-title">New Employee</h4>
                 </div>
             </div>
         </div>
@@ -40,7 +40,9 @@
                             <form method="post" action="{{ route('employee.store') }}" enctype="multipart/form-data">
                                 @csrf
 
-                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Employee
+                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> New Employee
+                                    Form
+                                    Registration
                                 </h5>
 
                                 <div class="row">

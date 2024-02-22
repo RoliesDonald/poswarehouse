@@ -15,22 +15,35 @@
 
                 <li class="menu-title mt-2">Manage</li>
 
+                <!-- Employee -->
                 <li>
-                    <a href="#sidebarEcommerce" data-bs-toggle="collapse">
+                    <a href="#sidebarEmployee" data-bs-toggle="collapse">
                         <i class="mdi mdi-human-male-female"></i>
                         <span>Manage Employee</span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarEcommerce">
+                    <div class="collapse" id="sidebarEmployee">
                         <ul class="nav-second-level">
                             <li>
                                 <a href="{{ route('all.employee') }}"
                                     >All Employee</a
                                 >
                             </li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- Customer -->
+                <li>
+                    <a href="#sidebarCustomer" data-bs-toggle="collapse">
+                        <i class="mdi mdi-account-multiple-plus-outline"></i>
+                        <span>Manage Customer</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarCustomer">
+                        <ul class="nav-second-level">
                             <li>
-                                <a href="ecommerce-dashboard.html"
-                                    >Add Employee</a
+                                <a href="{{ route('all.customer') }}"
+                                    >All Customer</a
                                 >
                             </li>
                         </ul>

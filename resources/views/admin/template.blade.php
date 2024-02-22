@@ -62,12 +62,21 @@
                     'backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css'
                 )
             }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('backend/assets/libs/clockpicker/bootstrap-clockpicker.min.css') }}" rel="stylesheet"
-        type="text/css" />
-    <link href="{{ asset('backend/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{ asset('backend/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}"
-        rel="stylesheet" type="text/css" />
+    <link href="{{
+                asset(
+                    'backend/assets/libs/clockpicker/bootstrap-clockpicker.min.css'
+                )
+            }}" rel="stylesheet" type="text/css" />
+    <link href="{{
+                asset(
+                    'backend/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css'
+                )
+            }}" rel="stylesheet" type="text/css" />
+    <link href="{{
+                asset(
+                    'backend/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css'
+                )
+            }}" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap css -->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -556,8 +565,16 @@
                 )
             }}"></script>
 
-    <script src="{{ asset('backend/assets/libs/clockpicker/bootstrap-clockpicker.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/clockpicker/bootstrap-clockpicker.min.js'
+                )
+            }}"></script>
+    <script src="{{
+                asset(
+                    'backend/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js'
+                )
+            }}"></script>
 
     <!-- Dashboar 1 init js-->
     <script src="{{
@@ -645,36 +662,43 @@
     <script src="{{
                 asset('backend/assets/js/pages/form-advanced.init.js')
             }}"></script>
-    <script src="{{ asset('backend/assets/js/pages/form-pickers.init.js') }}"></script>
+    <script src="{{
+                asset('backend/assets/js/pages/form-pickers.init.js')
+            }}"></script>
 
     <!-- Toastr js-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('backend/assets/js/code.js') }}"></script>
     <script>
         @if(Session::has('message'))
-                    toastr.options = {
-                        "progressBar" : true,
-                        "closeButton" : true,
-                    }
-                    var type = "{{ Session::get('alert-type','info') }}"
-                    switch(type){
-                       case 'info':
-                       toastr.info(" {{ Session::get('message') }} ");
-                       break;
+                        toastr.options = {
+                            "progressBar" : true,
+                            "closeButton" : true,
+                        }
+                        var type = "{{ Session::get('alert-type','info') }}"
+                        switch(type){
+                           case 'info':
+                           toastr.info(" {{ Session::get('message') }} ");
+                           break;
 
-                       case 'success':
-                       toastr.success(" {{ Session::get('message') }} ",'OK Success!',{timeOut:2000});
-                       break;
+                           case 'success':
+                           toastr.success(" {{ Session::get('message') }} ",'OK Success!',{timeOut:2000});
+                           break;
 
-                       case 'warning':
-                       toastr.warning(" {{ Session::get('message') }} ");
-                       break;
+                           case 'warning':
+                           toastr.warning(" {{ Session::get('message') }} ");
+                           break;
 
-                       case 'error':
-                       toastr.error(" {{ Session::get('message') }} ");
-                       break;
-                    }
-                    @endif
+                           case 'error':
+                           toastr.error(" {{ Session::get('message') }} ");
+                           break;
+                        }
+                        @endif
     </script>
+
+
 
     <!-- App js-->
     <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +47,19 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/add/employee', 'AddEmployee')->name('add.employee');
         Route::post('/employee/profile/store', 'StoreEmployee')->name('employee.store');
         Route::get('/edit/employee/{id}', 'EditEmployee')->name('edit.employee');
+        Route::post('/employee/profile/update', 'UpdateEmployee')->name('employee.update');
+        Route::get('/delete/employee/{id}', 'DeleteEmployee')->name('delete.employee');
+    });
+
+    //customer controller
+    Route::controller(CustomerController::class)->group(function () {
+        Route::get('/all/customer', 'AllCustomer')->name('all.customer');
+        Route::get('/add/customer', 'AddCustomer')->name('add.customer');
+        Route::get('/edit/customer/{id}', 'EditCustomer')->name('edit.customer');
+        Route::post('/customer/store', 'StoreCustomer')->name('customer.store');
+        Route::get('/edit/customer/{id}', 'EditCustomer')->name('edit.customer');
+        Route::post('/customer/profile/update', 'UpdateCustomer')->name('customer.update');
+        Route::get('/delete/customer/{id}', 'DeleteCustomer')->name('delete.customer');
     });
 });
 

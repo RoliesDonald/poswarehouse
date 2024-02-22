@@ -1,4 +1,5 @@
-@extends('admin.template') @section('admin')
+@extends('admin.template')
+@section('admin')
 
 <div class="content">
 
@@ -11,11 +12,11 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="{{ route('add.employee') }}"
-                                class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee </a>
+                            <a href="{{ route('add.customer') }}"
+                                class="btn btn-warning rounded-pill waves-effect waves-light">Add Customer </a>
                         </ol>
                     </div>
-                    <h4 class="page-title">All Employee</h4>
+                    <h4 class="page-title">All Customer</h4>
                 </div>
             </div>
         </div>
@@ -35,14 +36,14 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Experience</th>
+                                    <th>Shop Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
 
 
                             <tbody>
-                                @foreach($employee as $key=> $item)
+                                @foreach($customer as $key=> $item)
                                 <tr class="align-middle p-md-0">
                                     <td>{{ $key+1 }}</td>
                                     <td> <img id="image" class="rounded-circle avatar-lg img-thumbnail"
@@ -51,12 +52,12 @@
                                     <td>{{ $item->name }}</td>
                                     <td class="text-truncate">{{ $item->email }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->experience }}</td>
+                                    <td>{{ $item->shopname }}</td>
                                     <td>
-                                        <a href="{{ route('edit.employee', $item->id) }}"
+                                        <a href="{{ route('edit.customer', $item->id) }}"
                                             class="btn btn-blue rounded-pill waves-effect waves-light"><i
                                                 class="mdi mdi-book-edit-outline font-22 p-0"></i></a>
-                                        <a href="{{ route('delete.employee', $item->id) }}" id="delete"
+                                        <a href="{{ route('delete.customer', $item->id) }}" id="delete"
                                             class="btn btn-danger rounded-pill waves-effect waves-light"><i
                                                 class="mdi mdi-delete-circle-outline font-22 p-0"></i></a>
 
