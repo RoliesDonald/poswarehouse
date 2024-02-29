@@ -29,6 +29,11 @@
                                     >All Employee</a
                                 >
                             </li>
+                            <li>
+                                <a href="{{ route('add.employee') }}"
+                                    >Add New Employee</a
+                                >
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -44,6 +49,62 @@
                             <li>
                                 <a href="{{ route('all.customer') }}"
                                     >All Customer</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{ route('add.customer') }}"
+                                    >Add New Customer</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Supplier -->
+                <li>
+                    <a href="#sidebarSupplier" data-bs-toggle="collapse">
+                        <i class="mdi mdi-account-supervisor-outline"></i>
+                        <span>Manage Supllier</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarSupplier">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('alls.supplier') }}"
+                                    >All Supplier</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{ route('add.supplier') }}"
+                                    >Add New Supplier</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Salary -->
+                <li>
+                    <a href="#sidebarSalary" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cash-100"></i>
+                        <span>Employee Salary</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarSalary">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.advansalary') }}"
+                                    >All Advance Salary</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{ route('add.advansalary') }}"
+                                    >Add Advance Salary</a
+                                >
+                            </li>
+                            <li>
+                                <a href="{{ route('pay.salary') }}"
+                                    >Pay Salary</a
                                 >
                             </li>
                         </ul>
