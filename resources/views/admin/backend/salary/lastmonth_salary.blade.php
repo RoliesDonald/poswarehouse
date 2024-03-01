@@ -10,11 +10,11 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <a href="{{ route('add.advansalary') }}"
-                                class="btn btn-primary rounded-pill waves-effect waves-light">Pay Salary
+                                class="btn btn-primary rounded-pill waves-effect waves-light">Last Month Salary
                             </a>
                         </ol>
                     </div>
-                    <h4 class="page-title">Pay Salary</h4>
+                    <h4 class="page-title">Last Month Salary</h4>
                 </div>
             </div>
         </div>
@@ -31,14 +31,14 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Month</th>
-                                    <th>Salary</th>
-                                    <th>Advanced</th>
+                                    <th>Paid Salary</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach($salary as $key=> $item)
+                                @foreach($paidsalary as $key=> $item)
                                 <tr class="align-middle p-md-0">
                                     <td>{{ $key + 1 }}</td>
                                     <td>
@@ -48,28 +48,30 @@
                                     </td>
                                     <td>{{ $item["employee"]["name"] }}</td>
                                     <td class="text-truncate">
-                                        {{ $item->month }}
+                                        {{ $item->salary_month }}
                                     </td>
-                                    <td>{{ $item->employee->salaray }}</td>
-                                    {{--
-                                    <td>{{ $item->advance_salary }}</td>
-                                    --}}
+                                    @php
+                                    $amount=$item->employee->salaray + $item->employee->advance_salary;
+                                    @endphp
                                     <td>
-                                        @if ($item->advance_salary==NULL)
-                                        <span class="badge bg-blue p-1">
-                                            No Advance
+
+                                        <span class="badge bg-danger p-1 font-14">{{ $amount }}</span>
+                                        {{-- {{ $item->employee->salaray }} --}}
+                                    </td>
+
+                                    <td>
+                                        @if ($item->advance_salary == NULL)
+                                        <span class="badge bg-success p-1">
+                                            Full Paid
                                         </span>
                                         @else
                                         {{ $item->advance_salary }}
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('edit.advance.salary', $item->id) }}"
-                                            class="btn btn-blue rounded-pill waves-effect waves-light"><i
+                                        <a href="" class="btn btn-blue rounded-pill waves-effect waves-light"><i
                                                 class="mdi mdi-account-edit-outline font-22 p-0"></i></a>
-                                        <a href="{{ route('pay.now.salary', $item->id) }}"
-                                            class="btn btn-success rounded-pill waves-effect waves-light"><i
-                                                class="mdi mdi-check-outline font-22 p-0"></i></a>
+
                                     </td>
                                 </tr>
                                 @endforeach

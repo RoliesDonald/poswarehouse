@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\AdvanceSalary;
 use App\Models\Employee;
+use App\Models\PaySalary;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -94,4 +95,32 @@ class SalaryController extends Controller
         $employee = Employee::latest()->get();
         return view('admin.backend.salary.pay_salary', compact('employee'));
     } //PaySalary
+
+    public function PayNowSalary($id)
+    {
+        $paysalary = Employee::findOrFail($id);
+        return view('admin.backend.salary.pay_now_salary', compact('paysalary'));
+    } //end PayNowSalary
+
+    public function EmployeeSalaryStore(Request $request)
+    {
+        $employee_id = $request->id;
+        PaySalary::insert([
+            'employee_id' => $employee_id,
+            'salary_month' => $request->month,
+            'paid_amount' => $request->total,
+            'created_at' => Carbon::now(),
+        ]);
+        $toasnotif = array(
+            'message' => 'Paid Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('pay.salary')->with($toasnotif);
+    } //end EmployeeSalaryStore
+
+    public function LastMonthSalary()
+    {
+        $paidsalary = PaySalary::latest()->get();
+        return view('admin.backend.salary.lastmonth_salary', compact('paidsalary'));
+    } // end LastMonthSalary
 }

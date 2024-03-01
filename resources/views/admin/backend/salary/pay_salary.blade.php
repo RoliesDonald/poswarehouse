@@ -9,8 +9,7 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="" class="">
-                            </a>
+                            <a href="" class=""> </a>
                         </ol>
                     </div>
                     <h4 class="page-title">Pay Salary</h4>
@@ -25,9 +24,9 @@
                     <div class="card-body">
                         <h4 class="header-title pb-2">{{ date("F Y") }}</h4>
                         {{--
-                        <hr> --}}
-                        <table id="basic-datatable"
-                            class="table dt-responsive table-hover table-bordered nowrap w-100 ">
+                        <hr />
+                        --}}
+                        <table id="basic-datatable" class="table dt-responsive table-hover table-bordered nowrap w-100">
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
@@ -43,39 +42,52 @@
 
                             <tbody>
                                 @foreach($employee as $key=> $item)
-                                <tr class="align-middle p-md-0 ">
+                                <tr class="align-middle p-md-0">
                                     <td class="text-center">{{ $key + 1 }}</td>
                                     <td class="text-center">
                                         <img id="image" class="rounded-circle avatar-lg img-thumbnail"
                                             src="{{ (!empty($item->image)) ? url(''.$item->image) : url('upload/no_image.jpg') }}"
                                             style="width: 50px; height: 50px" />
                                     </td>
-                                    <td class="text-center">{{ $item->name}}</td>
-                                    <td class="text-center"><span class="badge bg-primary p-1 font-14">{{ date("F Y",
-                                            strtotime('-1 month'))
+                                    <td class="text-center">
+                                        {{ $item->name}}
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-primary p-1 font-14">{{
+                                            date(
+                                            "F Y",
+                                            strtotime("-1 month")
+                                            )
                                             }}</span>
                                     </td>
-                                    <td class="text-end">{{ $item->salaray }}</td>
-                                    <td class="text-end">@if ($item['advance']['advance_salary']==NULL)
+                                    <td class="text-end">
+                                        {{ $item->salaray }}
+                                    </td>
+                                    <td class="text-end">
+                                        @if ($item['advance']['advance_salary'] == NULL)
                                         <span class="badge bg-blue p-1 font-14">
                                             No Advance
                                         </span>
                                         @else
-                                        <span class="badge bg-warning p-1 font-14"> {{
-                                            $item['advance']['advance_salary']
+                                        <span class="badge bg-warning p-1 font-14">
+                                            {{
+                                            $item["advance"][
+                                            "advance_salary"
+                                            ]
                                             }}</span>
                                         @endif
                                     </td>
-                                    <td class="text-end">@php
-                                        $amount=$item->salaray - $item['advance']['advance_salary'] ;
+                                    <td class="text-end">
+                                        @php $amount=$item->salaray -
+                                        $item['advance']['advance_salary'] ;
                                         @endphp
                                         <span class="badge bg-danger p-1 font-14">{{ $amount }}</span>
                                     </td>
                                     <td class="text-center">
-
-                                        <a href="{{ route('pay.salary', $item->id) }}" id="delete"
+                                        <a href="{{ route('pay.now.salary', $item->id) }}"
                                             class="btn btn-success rounded-pill waves-effect waves-light"><i
-                                                class="mdi mdi-check-outline "></i> Pay Now</a>
+                                                class="mdi mdi-check-outline"></i>
+                                            Pay Now</a>
                                     </td>
                                 </tr>
                                 @endforeach
