@@ -25,10 +25,14 @@
                     <div class="collapse" id="sidebarEmployee">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.employee') }}">All Employee</a>
+                                <a href="{{ route('all.employee') }}"
+                                    >All Employee</a
+                                >
                             </li>
                             <li>
-                                <a href="{{ route('add.employee') }}">Add New Employee</a>
+                                <a href="{{ route('add.employee') }}"
+                                    >Add New Employee</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -43,10 +47,14 @@
                     <div class="collapse" id="sidebarCustomer">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.customer') }}">All Customer</a>
+                                <a href="{{ route('all.customer') }}"
+                                    >All Customer</a
+                                >
                             </li>
                             <li>
-                                <a href="{{ route('add.customer') }}">Add New Customer</a>
+                                <a href="{{ route('add.customer') }}"
+                                    >Add New Customer</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -62,10 +70,14 @@
                     <div class="collapse" id="sidebarSupplier">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('alls.supplier') }}">All Supplier</a>
+                                <a href="{{ route('alls.supplier') }}"
+                                    >All Supplier</a
+                                >
                             </li>
                             <li>
-                                <a href="{{ route('add.supplier') }}">Add New Supplier</a>
+                                <a href="{{ route('add.supplier') }}"
+                                    >Add New Supplier</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -81,16 +93,24 @@
                     <div class="collapse" id="sidebarSalary">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.advansalary') }}">All Advance Salary</a>
+                                <a href="{{ route('all.advansalary') }}"
+                                    >All Advance Salary</a
+                                >
                             </li>
                             <li>
-                                <a href="{{ route('add.advansalary') }}">Add Advance Salary</a>
+                                <a href="{{ route('add.advansalary') }}"
+                                    >Add Advance Salary</a
+                                >
                             </li>
                             <li>
-                                <a href="{{ route('pay.salary') }}">Pay Salary</a>
+                                <a href="{{ route('pay.salary') }}"
+                                    >Pay Salary</a
+                                >
                             </li>
                             <li>
-                                <a href="{{ route('lastmonth.salary') }}">Last Month Salary</a>
+                                <a href="{{ route('lastmonth.salary') }}"
+                                    >Last Month Salary</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -106,7 +126,9 @@
                     <div class="collapse" id="attendence">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('employee.attend.list') }}">Employee Attendence</a>
+                                <a href="{{ route('employee.attend.list') }}"
+                                    >Employee Attendence</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -115,18 +137,15 @@
                 <li class="menu-title mt-2">Master Data</li>
 
                 <li>
-                    <a href="#sidebarAuth" data-bs-toggle="collapse">
+                    <a href="#sideCategory" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-circle-outline"></i>
                         <span>Manage Product </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarAuth">
+                    <div class="collapse" id="sideCategory">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="ecommerce-dashboard.html">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-products.html">Products</a>
+                                <a href="">Category</a>
                             </li>
                         </ul>
                     </div>

@@ -8,13 +8,9 @@
             <div class="col-12">
                 <div class="page-title-box">
                     <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <a href="{{ route('add.employee.attend') }}"
-                                class="btn btn-warning rounded-pill waves-effect waves-light">Add Employee Attendence
-                            </a>
-                        </ol>
+                        <ol class="breadcrumb m-0"></ol>
                     </div>
-                    <h4 class="page-title">All Employee Attendence</h4>
+                    <h4 class="page-title">All Employee Attendance</h4>
                 </div>
             </div>
         </div>
@@ -28,22 +24,28 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
                                     <th>Date</th>
-                                    <th>Action</th>
+                                    <th>Attend Status</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach($allAttendData as $key=> $item)
+                                @foreach($detailsAttend as $key=> $item)
                                 <tr class="align-middle p-md-0">
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{date('d-m-Y', strtotime($item->date)) }}</td>
                                     <td>
-                                        <a href="{{ route('edit.employee.attend', $item->date) }}"
-                                            class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-                                        <a href="{{ route('view.employee.attend', $item->date) }}"
-                                            class="btn btn-danger rounded-pill waves-effect waves-light">View</a>
+                                        <img id="image" class="rounded-circle avatar-lg img-thumbnail"
+                                            src="{{ (!empty($item['employee']['image'])) ? url(''.$item['employee']['image']) : url('upload/no_image.jpg') }}"
+                                            style="width: 50px; height: 50px" />
                                     </td>
+                                    <td>{{ $item['employee']['name'] }}</td>
+                                    <td class="text-truncate">
+                                        {{ date('d-M-Y',strtotime($item->date))}}
+                                    </td>
+                                    <td>{{ $item->attend_status }}</td>
+
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -37,6 +37,7 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <h4>
+                                <h4>Edit Employee Attendance</h4>
                                 <a href="{{ route('employee.attend.list') }}" class="btn btn-primary float-sm-right"> <i
                                         class="fas fa-list"></i>
                                     &nbsp;Employee Attendance List</a>
@@ -59,7 +60,7 @@
                             @csrf
                             <div class="form-group col-md-4">
                                 <label for="date" class="control-label">Attendance Date</label>
-                                <input type="date" name="date" id="date"
+                                <input type="date" name="date" id="date" value="{{ $editData['0']['date'] }}"
                                     class="checkdate form-control form-control-sm singledatepicker"
                                     placeholder="Attendance Date" autocomplete="off">
                             </div>
@@ -83,28 +84,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($allEmployee as $key => $employee)
-                                    <tr id="div {{$employee->id}}" class="text-center">
-                                        <input type="hidden" name="employee_id[]" value="{{$employee->id}}"
+                                    @foreach ($editData as $key => $item)
+                                    <tr class="text-center">
+                                        <input type="hidden" name="employee_id[]" value="{{$item->employee_id}}"
                                             class="employee_id">
                                         <td>{{$key+1}}</td>
                                         <td><img class="rounded-circle avatar-lg img-thumbnail"
-                                                src="{{ (!empty($employee->image)) ? url(''.$employee->image) : url('upload/no_image.jpg') }}"
+                                                src="{{ (!empty($item['employee']['image'])) ? url(''.$item['employee']['image']) : url('upload/no_image.jpg') }}"
                                                 style="width:50px; height: 50px;">
                                         </td>
-                                        <td>{{$employee->name}}</td>
+                                        <td>{{$item['employee']['name']}}</td>
                                         <td colspan="3">
                                             <div class="switch-toggle switch-3 switch-candy">
                                                 <input class="present" id="present{{$key}}" name="attend_status{{$key}}"
-                                                    value="present" type="radio" checked="checked">
+                                                    value="present" type="radio" {{ $item->attend_status == 'present' ?
+                                                'checked' : '' }}>
 
                                                 <label for="present{{$key}}">Present</label>
                                                 <input class="leave" id="leave{{$key}}" name="attend_status{{$key}}"
-                                                    value="Leave" type="radio">
+                                                    value="Leave" type="radio" {{ $item->attend_status == 'Leave' ?
+                                                'checked' : '' }}>
 
                                                 <label for="leave{{$key}}">Leave</label>
                                                 <input class="absent" id="absent{{$key}}" name="attend_status{{$key}}"
-                                                    value="Absent" type="radio">
+                                                    value="Absent" type="radio" {{ $item->attend_status == 'Absent' ?
+                                                'checked' : '' }}>
 
                                                 <label for="absent{{$key}}">Absent</label>
                                                 <a></a>
@@ -115,7 +119,7 @@
                                 </tbody>
                             </table>
                             <div class="row float-right"><button type="submit" class="btn btn-success btn-sm">
-                                    Submit
+                                    Update
                                 </button></div>
                         </form>
                     </div>
